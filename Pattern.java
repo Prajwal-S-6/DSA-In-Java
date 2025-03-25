@@ -157,4 +157,19 @@ public class Pattern {
 
         }
     }
+
+
+    /*
+              *
+             ***
+            *****
+            *****
+             ***
+              *
+     */
+
+    public static void printPattern9(int n) {
+        printPattern7(n);
+        printPattern8(n);
+    }
 }

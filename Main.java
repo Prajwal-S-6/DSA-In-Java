@@ -23,6 +23,8 @@ public class Main {
 //        Pattern.printPattern7(5);
 //        Pattern.printPattern8(6);
 
+//        Pattern.printPattern9(3);
+
     }
 
 
