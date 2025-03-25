@@ -172,4 +172,45 @@ public class Pattern {
         printPattern7(n);
         printPattern8(n);
     }
+
+
+
+    /*
+             *
+             **
+             ***
+             ****
+             *****
+             ****
+             ***
+             **
+             *
+     */
+
+    public static void printPattern10(int n) {
+        int count1 = n - 1;
+        for(int i = 0; i < n; i++) {
+            for(int j=0; j <= i; j++) {
+                System.out.print("*");
+            }
+            for(int k=0; k < count1; k++) {
+                System.out.print(" ");
+            }
+            count1--;
+            System.out.print("\n");
+        }
+
+        int count2 = 0;
+        for(int i = n - 1; i > 0; i--) {
+            for(int j=0; j < i; j++) {
+                System.out.print("*");
+            }
+
+            for(int k=0; k < count2; k++) {
+                System.out.print(" ");
+            }
+            count2++;
+            System.out.print("\n");
+        }
+    }
 }

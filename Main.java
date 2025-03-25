@@ -25,6 +25,8 @@ public class Main {
 
 //        Pattern.printPattern9(3);
 
+        Pattern.printPattern10(5);
+
     }
 
 
