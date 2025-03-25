@@ -13,13 +13,15 @@ public class Main {
 //            throw new RuntimeException(e);
 //        }
 
-        Pattern.printPattern1(3);
-        Pattern.printPattern2(3);
-        Pattern.printPattern3(5);
-        Pattern.printPattern4(5);
-        Pattern.printPattern5(5);
-        Pattern.printPattern6(5);
-        Pattern.printPattern7(5);
+        // uncomment this to execute
+//        Pattern.printPattern1(3);
+//        Pattern.printPattern2(3);
+//        Pattern.printPattern3(5);
+//        Pattern.printPattern4(5);
+//        Pattern.printPattern5(5);
+//        Pattern.printPattern6(5);
+//        Pattern.printPattern7(5);
+//        Pattern.printPattern8(6);
 
     }
 

@@ -130,4 +130,31 @@ public class Pattern {
 
         }
     }
+
+    /*
+                ***********
+                 *********
+                  *******
+                   *****
+                    ***
+                     *
+
+     */
+    public static void printPattern8(int n) {
+        int count = (2*n) - 1;
+        for(int i=n; i > 0; i--) {
+            for(int j = 0; j < n-i; j++) {
+                System.out.print(" ");
+            }
+            for(int k = 1; k <= count; k++) {
+                System.out.print("*");
+            }
+            count = count - 2;
+            for(int j = 0; j < n-i; j++) {
+                System.out.print(" ");
+            }
+            System.out.print("\n");
+
+        }
+    }
 }
