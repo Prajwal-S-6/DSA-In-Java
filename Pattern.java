@@ -106,11 +106,11 @@ public class Pattern {
 
 
     /*
-     *
-     ***
-     *****
-     *******
-     *********
+                  *
+                 ***
+                *****
+               *******
+              *********
      */
     public static void printPattern7(int n) {
         int count = 1;
