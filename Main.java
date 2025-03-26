@@ -33,7 +33,13 @@ public class Main {
 //        Pattern.printPattern13(5);
 //        Pattern.printPattern14(5);
 //        Pattern.printPattern15(5);
-        Pattern.printPattern16(5);
+//        Pattern.printPattern16(5);
+//        Pattern.printPattern17(4);
+//        Pattern.printPattern18(4);
+//        Pattern.printPattern19(3);
+//        Pattern.printPattern20(3);
+//        Pattern.printPattern21(5);
+        Pattern.printPattern22(3);
 
     }
 

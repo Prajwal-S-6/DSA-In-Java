@@ -1,3 +1,6 @@
+import static java.lang.Math.abs;
+import static java.lang.Math.max;
+
 public class Pattern {
 
     /*
@@ -118,7 +121,6 @@ public class Pattern {
             for(int j = 0; j < n-i; j++) {
                 System.out.print(" ");
             }
-            int counter = 0;
             for(int k = 1; k <= count; k++) {
                 System.out.print("*");
             }
@@ -352,6 +354,201 @@ public class Pattern {
         }
     }
 
+
+
+    /*
+                       A
+                      A B A
+                     A B C B A
+                    A B C D C B A
+     */
+
+    public static void printPattern17(int n) {
+        int start = 1;
+        int charIncrement = 1;
+        for(int i=n; i > 0; i--) {
+            for(int j = 1; j < i; j++) {
+                System.out.print(" ");
+            }
+
+            int startChar = 'A' - 1;
+            for(int k = 0; k < start; k++) {
+                if(k < charIncrement) {
+                    startChar = startChar + 1;
+                } else {
+                    startChar = startChar - 1;
+                }
+                System.out.print((char) startChar + " ");
+            }
+            start = start+2;
+            charIncrement++;
+
+            for(int j = 1; j < i; j++) {
+                System.out.print(" ");
+            }
+            System.out.print("\n");
+        }
+    }
+
+    /*
+                D
+                D C
+                D C B
+                D C B A
+     */
+
+    public static void printPattern18(int n) {
+        int initialChar = 'A' + n - 1;
+        for(int i  = 0; i < n; i++) {
+            for(int j = 0; j <= i; j++) {
+                System.out.print((char) (initialChar - j) + " ");
+            }
+            System.out.print("\n");
+        }
+    }
+
+
+    /*
+             ******
+             **  **
+             *    *
+             *    *
+             **  **
+             ******
+     */
+    public static void printPattern19(int n) {
+        int spaces = 0;
+        int stars = n * 2;
+
+        for(int i = 0 ; i < n; i++) {
+            for(int j = 0; j < stars/2 ; j++) {
+                System.out.print("*");
+            }
+            for(int k = 0; k < spaces ; k++) {
+                System.out.print(" ");
+            }
+            for(int j = 0; j < stars/2 ; j++) {
+                System.out.print("*");
+            }
+            stars = stars - 2;
+            spaces = spaces + 2;
+            System.out.print("\n");
+        }
+
+        spaces = spaces -2;
+        stars += 2;
+        for(int i = 0 ; i < n; i++) {
+            for(int j = 0; j < stars/2 ; j++) {
+                System.out.print("*");
+            }
+            for(int k = 0; k < spaces ; k++) {
+                System.out.print(" ");
+            }
+            for(int j = 0; j < stars/2 ; j++) {
+                System.out.print("*");
+            }
+            stars = stars + 2;
+            spaces = spaces - 2;
+            System.out.print("\n");
+        }
+    }
+
+
+    /*
+             *    *
+             **  **
+             ******
+             **  **
+             *    *
+     */
+
+    public static void printPattern20(int n) {
+        int spaces = (2*n) -2;
+        for(int i = 0; i < n; i++) {
+            for(int j = 0; j <=i; j++) {
+                System.out.print("*");
+            }
+
+            for(int k=0; k < spaces; k++) {
+                System.out.print(" ");
+            }
+            spaces -= 2;
+
+            for(int j = 0; j <=i; j++) {
+                System.out.print("*");
+            }
+
+            System.out.print("\n");
+        }
+
+        spaces+=n+1;
+        for(int i = n; i > 0; i--) {
+            for(int j = 1; j <i; j++) {
+                System.out.print("*");
+            }
+
+            for(int k=0; k < spaces; k++) {
+                System.out.print(" ");
+            }
+            spaces += 2;
+
+            for(int j = 1; j <i; j++) {
+                System.out.print("*");
+            }
+
+            System.out.print("\n");
+        }
+    }
+
+
+    /*
+             *****
+             *   *
+             *   *
+             *   *
+             *****
+     */
+    public static void printPattern21(int n) {
+        int numberOfSpaces = n - 2;
+        for(int i = 0; i < n; i++) {
+            if(i == 0 || i== n-1) {
+                for(int j = 0; j < n; j++) {
+                    System.out.print("*");
+                }
+            } else {
+                System.out.print("*");
+                for(int j = 0; j < numberOfSpaces; j++) {
+                    System.out.print(" ");
+                }
+                System.out.print("*");
+            }
+            System.out.print("\n");
+        }
+    }
+
+    /*
+            33333
+            32223
+            32123
+            32223
+            33333
+
+     */
+
+
+    public static void printPattern22(int n) {
+        int numberOfLines = (2*n) - 1;
+        for(int i = 0; i < numberOfLines; i++) {
+            for(int j = 0; j < numberOfLines; j++) {
+                int X = abs(i-n+1);
+                int Y = abs(j-n+1);
+                int val = max(X, Y) + 1;
+                System.out.print(val);
+            }
+            System.out.print("\n");
+        }
+
+    }
 
 
 
