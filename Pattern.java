@@ -213,4 +213,146 @@ public class Pattern {
             System.out.print("\n");
         }
     }
+
+
+    /*
+                    1
+                    0 1
+                    1 0 1
+                    0 1 0 1
+     */
+
+    public static void printPattern11(int n) {
+        for(int i=1; i<=n; i++) {
+            if(i%2 == 0) {
+                for(int j=1; j<=i; j++) {
+                    if(j%2==0) {
+                        System.out.print("1");
+                    } else {
+                        System.out.print("0");
+                    }
+
+                    System.out.print(" ");
+                }
+            } else {
+                for(int j=1; j<=i; j++) {
+                    if(j%2==0) {
+                        System.out.print("0");
+                    } else {
+                        System.out.print("1");
+                    }
+                    System.out.print(" ");
+                }
+            }
+            System.out.print("\n");
+        }
+    }
+
+
+    /*
+            1      1
+            12    21
+            123  321
+            12344321
+     */
+
+    public static void printPattern12(int n) {
+        int numberOfSpaces = (n*2) - 2;
+        for(int i = 1; i <= n; i++) {
+            for(int j = 1; j <= i; j++) {
+                System.out.print(j);
+            }
+
+
+            for(int k = 0; k < numberOfSpaces; k++) {
+                System.out.print(" ");
+            }
+
+            for(int j = i; j > 0; j--) {
+                System.out.print(j);
+            }
+            System.out.print(" ");
+
+            numberOfSpaces = numberOfSpaces -2;
+            System.out.print("\n");
+        }
+    }
+
+
+    /*
+                1
+                2 3
+                4 5 6
+                7 8 9 10
+     */
+
+    public static void printPattern13(int n) {
+        int counter = 0;
+        for(int i = 1; i <=n; i++) {
+            for(int j = 1; j<=i; j++) {
+                counter = counter + 1;
+                System.out.print(counter+ " ");
+            }
+            System.out.print("\n");
+        }
+    }
+
+    /*
+                A
+                A B
+                A B C
+                A B C D
+                A B C D E
+     */
+
+    public static void printPattern14(int n) {
+        int counter = 'A';
+        for(int i = 1; i <=n; i++) {
+            for(int j = 0; j<i; j++) {
+                System.out.print((char)(counter +j) + " ");
+            }
+            System.out.print("\n");
+        }
+    }
+
+    /*
+                A B C D E
+                A B C D
+                A B C
+                A B
+                A
+     */
+
+    public static void printPattern15(int n) {
+        int counter = 'A';
+        for(int i = n; i > 0; i--) {
+            for(int j = 0; j<i; j++) {
+                System.out.print((char)(counter +j) + " ");
+            }
+            System.out.print("\n");
+        }
+    }
+
+    /*
+            A
+            B B
+            C C C
+            D D D D
+            E E E E E
+     */
+
+    public static void printPattern16(int n) {
+        int counter = 'A';
+        for(int i = 0; i < n; i++) {
+            for(int j = 0; j <= i; j++) {
+                System.out.print((char)(counter) + " ");
+            }
+            counter++;
+            System.out.print("\n");
+        }
+    }
+
+
+
+
 }

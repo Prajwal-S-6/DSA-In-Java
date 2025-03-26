@@ -25,7 +25,15 @@ public class Main {
 
 //        Pattern.printPattern9(3);
 
-        Pattern.printPattern10(5);
+//        Pattern.printPattern10(5);
+
+//        Pattern.printPattern11(4);
+
+//        Pattern.printPattern12(4);
+//        Pattern.printPattern13(5);
+//        Pattern.printPattern14(5);
+//        Pattern.printPattern15(5);
+        Pattern.printPattern16(5);
 
     }
 
