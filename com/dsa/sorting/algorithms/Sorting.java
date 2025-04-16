@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Sorting {
 
-    // worst case, average case: 0(n^2)
+    // worst case, average case: O(n^2)
     public static void bubbleSort(int[] arr) {
         int n = arr.length;
         boolean isSwapped = false;    //best case O(n)
@@ -50,7 +50,7 @@ public class Sorting {
         recursiveInsertionSort(arr, start, end+1);
     }
 
-    // worst case, average case: 0(n^2)
+    // worst case, average case: O(n^2)
     public static void insertionSort(int[] arr) {
         int n = arr.length;
         for(int i = 0; i < n; i++) {                //best case O(n)
@@ -63,7 +63,7 @@ public class Sorting {
         }
     }
 
-    // worst case, average case, best case: 0(n^2)
+    // worst case, average case, best case: O(n^2)
     public static void selectionSort(int[] arr) {
         int n = arr.length;
         for(int i=0; i < n; i++) {
@@ -86,6 +86,7 @@ public class Sorting {
         arr[j] = temp;
     }
 
+    // worst case, average case, best case: O(nlogn), O(n)
     public static void mergeSort(int[] arr) {
         int low = 0;
         int high = arr.length - 1;
@@ -129,6 +130,38 @@ public class Sorting {
         for(int i = low; i <= high; i++) {
             arr[i] = resultList.get(i-low);
         }
+
+    }
+
+    // worst case, average case, best case: O(nlogn), O(1)(excluding recursive stack space)
+    public static void quickSort(int[] arr) {
+        int n = arr.length;
+        recursiveQuickSort(arr, 0, n-1);
+    }
+
+    private static void recursiveQuickSort(int[] arr, int low, int high) {
+        if(low >= high) {
+            return;
+        }
+        int pivot = arr[high];
+        int i = low;
+        int j = high;
+        while(i < j) {
+            if(arr[i] > pivot) {           //interchange this for sorting in descending order
+                if(arr[j] < pivot) {       //interchange this for sorting in descending order
+                    swap(arr, i, j);
+                } else {
+                    j--;
+                }
+            } else{
+                i++;
+            }
+        }
+        swap(arr, i, high);
+
+        recursiveQuickSort(arr, low, i-1);
+        recursiveQuickSort(arr, i+1, high);
+
 
     }
 
