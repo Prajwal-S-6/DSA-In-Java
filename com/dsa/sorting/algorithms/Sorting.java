@@ -23,6 +23,33 @@ public class Sorting {
         }
     }
 
+    public static void recursiveBubbleSort(int[] arr, int start, int end) {
+        if(start == end) {
+            return;
+        }
+        int n = arr.length;
+        for(int i = start; i < end; i++) {
+            if(arr[i+1] < arr[i]) {
+                swap(arr, i, i+1);
+            }
+        }
+        recursiveBubbleSort(arr, 0, end-1);
+    }
+
+
+    public static void recursiveInsertionSort(int[] arr, int start, int end) {
+        int n = arr.length;
+        if(end >= n) {
+            return;
+        }
+        int j = end;
+        while(j >=1 && arr[j] < arr[j-1]) {
+            swap(arr, j, j-1);
+            j--;
+        }
+        recursiveInsertionSort(arr, start, end+1);
+    }
+
     // worst case, average case: 0(n^2)
     public static void insertionSort(int[] arr) {
         int n = arr.length;
