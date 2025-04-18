@@ -1,6 +1,8 @@
 package com.dsa.arrays;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 public class ArrayProblems {
@@ -29,6 +31,43 @@ public class ArrayProblems {
             list.add(arr[i]);
         }
 
+        return list;
+    }
+
+    public static int getLongestSubarray(int []nums, int k) {
+        int longestSubArray = 0;
+        int sum = nums[0];
+        int i = 0;
+        int j = 0;
+        while(j < nums.length) {
+            while(sum > k && i <= j) {
+                sum -= nums[i];
+                i++;
+            }
+            if(sum == k) {
+                longestSubArray = Math.max(longestSubArray, j-i+1);
+            }
+            j++;
+            if(j < nums.length) {
+               sum +=nums[j];
+            }
+
+        }
+        return longestSubArray;
+    }
+
+    public static ArrayList<Integer> findLeaders(ArrayList<Integer> elements) {
+        ArrayList<Integer> list = new ArrayList<>();
+        int n = elements.size();
+        int max = elements.get(n - 1);
+        list.add(max);
+        for(int i = n - 1; i >= 0; i--) {
+            if(elements.get(i) > max) {
+                list.add(elements.get(i));
+                max = elements.get(i);
+            }
+        }
+        // Collections.reverse(list);
         return list;
     }
 }
