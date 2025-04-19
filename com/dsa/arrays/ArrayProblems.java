@@ -70,4 +70,54 @@ public class ArrayProblems {
         // Collections.reverse(list);
         return list;
     }
+
+
+    public static int searchInsert(int[] nums, int target) {
+        int low = 0;
+        int high = nums.length - 1;
+        int ans = nums.length;
+        while(low < high) {
+            int mid = (low + high) / 2;
+            if(nums[mid] == target) {
+                return mid;
+            } else if(nums[mid] > target) {
+                high = mid - 1;
+            } else {
+                low = mid + 1;
+            }
+        }
+
+        return ans;
+    }
+
+
+    public static int[] getFloorAndCeil(int[] nums, int x) {
+        int[] result = {-1, -1};
+
+        int fLow = 0;
+        int fHigh = nums.length - 1;
+        while (fLow <= fHigh) {
+            int fMid = (fLow + fHigh) / 2;
+            if (nums[fMid] <= x) {
+                result[0] = nums[fMid];
+                fLow = fMid + 1;
+            } else {
+                fHigh = fMid - 1;
+            }
+        }
+
+        int cLow = 0;
+        int cHigh = nums.length - 1;
+        while (cLow <= cHigh) {
+            int cMid = (cLow + cHigh) / 2;
+            if (nums[cMid] >= x) {
+                result[1] = nums[cMid];
+                cHigh = cMid - 1;
+            } else {
+                cLow = cMid + 1;
+            }
+        }
+
+        return result;
+    }
 }
