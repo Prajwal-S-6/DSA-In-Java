@@ -149,4 +149,58 @@ public class ArrayProblems {
         }
         return result;
     }
+
+    // ----------------------------------------------------------------------------------------------------------------------------------------------
+    public static void rotate(int[] nums, int k) {
+        k = k % nums.length;
+        if(k > nums.length) {
+            return;
+        }
+        k = nums.length - k;
+        reverse(nums, 0, k - 1);
+        reverse(nums, k, nums.length - 1);
+        reverse(nums, 0, nums.length - 1);
+
+    }
+
+    private static void reverse(int[] nums, int i, int j) {
+        while(i < j) {
+            int temp = nums[i];
+            nums[i] = nums[j];
+            nums[j] = temp;
+            i++;
+            j--;
+        }
+    }
+
+    // ----------------------------------------------------------------------------------------------------------------------------------------------
+    public static boolean check(int[] nums) {
+        int dip = -1;
+        for(int i=0; i < nums.length - 1; i++) {
+            if(nums[i+1] < nums[i]) {
+                dip = i;
+                break;
+            }
+        }
+
+        if(dip != -1) {
+            reverse(nums, 0, dip);
+            reverse(nums, dip+1, nums.length - 1);
+            reverse(nums, 0, nums.length - 1);
+            return arraySortedOrNot(nums);
+        } else {
+            return true;
+        }
+
+    }
+
+    private static boolean arraySortedOrNot(int[] arr) {
+        for(int i=0; i < arr.length - 1; i++) {
+            if(arr[i] > arr[i+1]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
 }

@@ -27,5 +27,8 @@ public class Main {
 
 //        int[] arr = {5,7,7,8,8,10};
 //        searchRange(arr, 8);
+
+        int[] arr = {2,1,3,4};
+        System.out.println(check(arr));
     }
 }
