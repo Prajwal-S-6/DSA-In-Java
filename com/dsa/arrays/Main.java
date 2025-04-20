@@ -22,7 +22,10 @@ public class Main {
 //        int[] arr = {1,3,5,6};
 //        System.out.println(searchInsert(arr, 5));
 
-        int[] arr = {3, 4, 4, 7, 8, 10};
-        Arrays.stream(getFloorAndCeil(arr, 8)).forEach(System.out::println);
+//        int[] arr = {3, 4, 4, 7, 8, 10};
+//        Arrays.stream(getFloorAndCeil(arr, 8)).forEach(System.out::println);
+
+//        int[] arr = {5,7,7,8,8,10};
+//        searchRange(arr, 8);
     }
 }

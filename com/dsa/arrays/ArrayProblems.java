@@ -120,4 +120,33 @@ public class ArrayProblems {
 
         return result;
     }
+
+
+    public static int[] searchRange(int[] nums, int target) {
+        int[] result = {-1, -1};
+        int low = 0;
+        int high = nums.length - 1;
+        while(low <= high) {
+            int mid = (low+high)/2;
+            if(nums[mid] == target) {
+                int idx = mid;
+                while(idx > low && nums[idx - 1] == target) {
+                    idx--;
+                }
+                result[0] = idx;
+
+                idx = mid;
+                while(idx < high && nums[idx + 1] == target) {
+                    idx++;
+                }
+                result[1] = idx;
+                return result;
+            } else if(nums[mid] > target) {
+                high = mid -1;
+            } else {
+                low = mid + 1;
+            }
+        }
+        return result;
+    }
 }
