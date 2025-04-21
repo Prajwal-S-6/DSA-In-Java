@@ -21,5 +21,8 @@ public class Main {
 
         int[] arr4 = {3,1};
         search1(arr4, 3);
+
+        int[] arr5 = {4,5,6,7,0,1,2};
+        findMin(arr4);
     }
 }
