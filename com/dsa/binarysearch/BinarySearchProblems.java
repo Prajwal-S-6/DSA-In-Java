@@ -1,5 +1,7 @@
 package com.dsa.binarysearch;
 
+import static com.dsa.arrays.ArrayProblems.reverse;
+
 public class BinarySearchProblems {
 
     public static int[] searchRange(int[] nums, int target) {
@@ -76,5 +78,37 @@ public class BinarySearchProblems {
         }
 
         return ans;
+    }
+
+    // 81. Search in Rotated Sorted Array II  ~~~~~ O(3n) + O(log n)
+    public static boolean search(int[] nums, int target) {
+        int low = 0;
+        int high = nums.length - 1;
+        int dip = -1;
+        boolean result = false;
+        for(int i=0; i < nums.length - 1; i++) {  //O(n) to find rotate point
+            if(nums[i+1] < nums[i]) {
+                dip = i+1;
+                break;
+            }
+        }
+        if(dip != -1) {                     //0(2n) to bring it back to sorted order
+            reverse(nums, 0, dip-1);
+            reverse(nums, dip, high);
+            reverse(nums, low, high);
+        }
+
+        while(low <= high) {            //O(log n)  to binary search
+            int mid = (low+high)/2;
+            if(nums[mid] == target) {
+                return true;
+            }
+            else if(nums[mid] > target) {
+                high = mid -1;
+            } else {
+                low = mid+1;
+            }
+        }
+        return result;
     }
 }

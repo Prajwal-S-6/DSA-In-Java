@@ -15,5 +15,8 @@ public class Main {
 
         int[] arr2 = {5,7,7,8,8,10};
         searchRange(arr, 8);
+
+        int[] arr3 = {4,5,6,7,0,1,2};
+        search(arr3, 0);
     }
 }
