@@ -115,40 +115,69 @@ public class BinarySearchProblems {
 
     //33. Search in Rotated Sorted Array  ~~~~~ O(3n) + O(log n)
     public static int search1(int[] nums, int target) {
+        // solution 1
+//        int low = 0;
+//        int high = nums.length - 1;
+//        int rotatePoint = -1;
+//        int result = -1;
+//        for(int i=0; i < nums.length - 1; i++) {   //O(n) to find rotate point
+//            if(nums[i+1] < nums[i]) {
+//                rotatePoint = i+1;
+//                break;
+//            }
+//        }
+//        if(rotatePoint != -1) {                         //0(2n) to bring it back to sorted order
+//            reverse(nums, 0, rotatePoint-1);
+//            reverse(nums, rotatePoint, high);
+//            reverse(nums, low, high);
+//            rotatePoint = nums.length - rotatePoint;
+//        }
+//
+//        while(low <= high) {                //O(log n)  to binary search
+//            int mid = (low+high)/2;
+//            if(nums[mid] == target) {
+//                result = mid;
+//                break;
+//            }
+//            else if(nums[mid] > target) {
+//                high = mid -1;
+//            } else {
+//                low = mid+1;
+//            }
+//        }
+//
+//        if(rotatePoint != -1 && result != -1) {
+//            return result-rotatePoint < 0 ? result-rotatePoint+nums.length : result-rotatePoint;
+//        } else {
+//            return result;
+//        }
+
+        
+        // solution 2: First by find the sorted part of the array:
+            // if left part is sorted then check if(arr[low] <=target <=arr[mid])
+            // if right part is sorted then check if(arr[mid] <=target <=arr[high])
         int low = 0;
         int high = nums.length - 1;
-        int rotatePoint = -1;
         int result = -1;
-        for(int i=0; i < nums.length - 1; i++) {   //O(n) to find rotate point
-            if(nums[i+1] < nums[i]) {
-                rotatePoint = i+1;
-                break;
-            }
-        }
-        if(rotatePoint != -1) {                         //0(2n) to bring it back to sorted order
-            reverse(nums, 0, rotatePoint-1);
-            reverse(nums, rotatePoint, high);
-            reverse(nums, low, high);
-            rotatePoint = nums.length - rotatePoint;
-        }
-
-        while(low <= high) {                //O(log n)  to binary search
+        while(low <= high) {
             int mid = (low+high)/2;
             if(nums[mid] == target) {
-                result = mid;
-                break;
+                return mid;
             }
-            else if(nums[mid] > target) {
-                high = mid -1;
+            if(nums[mid] >= nums[low]) {
+                if(nums[low] <= target && target <= nums[mid]) {
+                    high = mid - 1;
+                } else {
+                    low = mid +1;
+                }
             } else {
-                low = mid+1;
+                if(nums[mid] <= target && target <= nums[high]) {
+                    low = mid + 1;
+                } else {
+                    high = mid - 1;
+                }
             }
         }
-
-        if(rotatePoint != -1 && result != -1) {
-            return result-rotatePoint < 0 ? result-rotatePoint+nums.length : result-rotatePoint;
-        } else {
-            return result;
-        }
+        return result;
     }
 }
