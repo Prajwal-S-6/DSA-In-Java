@@ -236,4 +236,37 @@ public class BinarySearchProblems {
         }
         return min;
     }
+
+    // 540. Single Element in a Sorted Array
+    public static int singleNonDuplicate(int[] nums) {
+        // O(n)
+        // int result = 0;
+        // for(int i=0; i < nums.length; i++) {
+        //     result ^= nums[i];
+        // }
+        // return result;
+
+        if(nums.length == 1) {
+            return nums[0];
+        }
+        else if(nums[0] != nums[1]) {
+            return nums[0];
+        } else if(nums[nums.length-1] != nums[nums.length-2]) {
+            return nums[nums.length-1];
+        }
+        int low = 1;
+        int high = nums.length - 2;
+        // intuition is to observe the index of the elements and observe the left half & right half after single element
+        while(low<=high) {
+            int mid = (low+high)/2;
+            if(nums[mid] != nums[mid+1] && nums[mid-1] != nums[mid]) {
+                return nums[mid];
+            } else if((mid%2 == 0 && nums[mid] == nums[mid-1]) || (mid%2 == 1 && nums[mid] == nums[mid+1])) {
+                high = mid-1;
+            } else {
+                low = mid+1;
+            }
+        }
+        return -1;
+    }
 }
