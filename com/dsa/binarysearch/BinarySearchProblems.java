@@ -453,4 +453,42 @@ public class BinarySearchProblems {
 
     }
 
+
+    // 1011. Capacity To Ship Packages Within D Days
+    public static int shipWithinDays(int[] weights, int days) {
+        int sum = 0;
+        for(int value: weights) {
+            sum+=value;
+        }
+        int low = 1;
+        int high = sum;
+
+        while(low <= high) {
+            int mid = (low+high)/2;
+            if(totalDaysToShip(weights, mid, days) <= days) {
+                high = mid - 1;
+            } else {
+                low = mid + 1;
+            }
+        }
+
+        return low;
+    }
+
+    private static int totalDaysToShip(int[] arr, int capacity, int days) {
+        int totaldays = 1;
+        int weight = 0;
+        for(int value: arr) {
+            if(value > capacity) {
+                return days+1;
+            }
+            weight+=value;
+            if(weight > capacity) {
+                totaldays++;
+                weight = value;
+            }
+        }
+        return totaldays;
+    }
+
 }

@@ -37,8 +37,11 @@ public class Main {
 //        int[] arr = {21212,10101,12121};
 //        smallestDivisor(arr, 1000000);
 
-        int[] arr = {2,3,4,7,11};
-        findKthPositive(arr, 5);
+//        int[] arr = {2,3,4,7,11};
+//        findKthPositive(arr, 5);
+
+        int[] arr = {1,2,3,1,1};
+        shipWithinDays(arr, 4);
 
 
     }
