@@ -45,7 +45,7 @@ public class Main {
 
         // System.out.println(floorSqrt(28));
 
-        System.out.println(NthRoot(2, 361));
+        System.out.println(NthRoot(3, 64));
 
     }
 }

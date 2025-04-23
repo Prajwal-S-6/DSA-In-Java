@@ -515,16 +515,23 @@ public class BinarySearchProblems {
 
         while(low <= high) {
             int mid = (low+high)/2;
-            if(Math.pow(mid, N) == M) {
+            if(power(mid, N) == M) {
                 return mid;
-            } else if(Math.pow(mid, N) > M) {
+            } else if(power(mid, N) > M) {
                 high = mid - 1;
             } else {
                 low = mid + 1;
             }
         }
-
         return -1;
+    }
+
+    private static int power(int num, int n) {
+        int value = 1;
+        for(int i=1; i <= n; i++) {
+            value*=num;
+        }
+        return value;
     }
 
 }
