@@ -1,6 +1,7 @@
 package com.dsa.binarysearch;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -614,6 +615,46 @@ public class BinarySearchProblems {
             }
         }
         return 0;
+    }
+
+    public static int aggressiveCows(int[] arr, int noOfCows) {
+        Arrays.sort(arr);
+        int max = 0;
+        for(int i=0; i < arr.length; i++) {
+            max = Math.max(max, arr[i]);
+        }
+        int min = 0;
+        for(int i=0; i < arr.length; i++) {
+            min = Math.min(min, arr[i]);
+        }
+        int low = 1;
+        int high = max-min;
+
+        while(low <= high) {
+            int mid = (low+high)/2;
+            if(numOfCowsPlaced(arr, mid) >= noOfCows) {
+                low = mid+1;
+            } else {
+                high = mid-1;
+            }
+        }
+        return high;
+    }
+
+    private static int numOfCowsPlaced(int[] arr, int minDistance) {
+        int numOfCows = 1;
+        int i=0;
+        int j = 1;
+        while(j < arr.length && i < arr.length) {
+            if(arr[j] - arr[i] >= minDistance) {
+                numOfCows++;
+                i = j;
+                j++;
+            } else {
+                j++;
+            }
+        }
+        return numOfCows;
     }
 
 }

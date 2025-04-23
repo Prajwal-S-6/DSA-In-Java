@@ -50,7 +50,9 @@ public class Main {
 //        int[] arr = {2,3,1,2,4,3};
 //        splitArray(arr, 5);
 
-        System.out.println(findMedianSortedArrays(new int[]{1,3}, new int[]{2})   );
+//        System.out.println(findMedianSortedArrays(new int[]{1,3}, new int[]{2})   );
+
+        System.out.println(aggressiveCows(new int[] {4, 2, 1, 3, 6}, 2));
 
 
     }
