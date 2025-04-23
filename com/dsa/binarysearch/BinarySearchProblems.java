@@ -491,4 +491,40 @@ public class BinarySearchProblems {
         return totaldays;
     }
 
+
+    public static long floorSqrt(long n) {
+        long low = 1;
+        long high = n;
+        while(low <= high) {
+            long mid = (low+high)/2;
+            if(mid*mid == n) {
+                return mid;
+            }
+            else if(mid*mid > n) {
+                high = mid - 1;
+            } else {
+                low = mid + 1;
+            }
+        }
+        return high;
+    }
+
+    public static int NthRoot(int N, int M) {
+        int low = 1;
+        int high = M;
+
+        while(low <= high) {
+            int mid = (low+high)/2;
+            if(Math.pow(mid, N) == M) {
+                return mid;
+            } else if(Math.pow(mid, N) > M) {
+                high = mid - 1;
+            } else {
+                low = mid + 1;
+            }
+        }
+
+        return -1;
+    }
+
 }

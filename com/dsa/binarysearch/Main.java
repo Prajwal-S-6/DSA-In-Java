@@ -40,9 +40,12 @@ public class Main {
 //        int[] arr = {2,3,4,7,11};
 //        findKthPositive(arr, 5);
 
-        int[] arr = {1,2,3,1,1};
-        shipWithinDays(arr, 4);
+//        int[] arr = {1,2,3,1,1};
+//        shipWithinDays(arr, 4);
 
+        // System.out.println(floorSqrt(28));
+
+        System.out.println(NthRoot(2, 361));
 
     }
 }
