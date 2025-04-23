@@ -31,8 +31,11 @@ public class Main {
 //        int[] arr = {805306368,805306368,805306368};
 //        minEatingSpeed(arr, 1000000000);
 
-        int[] arr = {7,7,7,7,12,7,7};
-        System.out.println(minDays(arr, 2, 3));
+//        int[] arr = {7,7,7,7,12,7,7};
+//        System.out.println(minDays(arr, 2, 3));
+
+        int[] arr = {21212,10101,12121};
+        smallestDivisor(arr, 1000000);
 
 
     }
