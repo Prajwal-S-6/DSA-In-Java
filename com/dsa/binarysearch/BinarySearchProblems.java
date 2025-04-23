@@ -534,4 +534,50 @@ public class BinarySearchProblems {
         return value;
     }
 
+
+
+    // 410. Split Array Largest Sum
+    public static int splitArray(int[] nums, int k) {
+        int max = nums[0];
+        for(int i =1; i < nums.length; i++) {
+            max = Math.max(max, nums[i]);
+        }
+        if(k== nums.length) {
+            return max;
+        }
+        int sum = 0;
+        for(int i =0; i < nums.length; i++) {
+            sum+=nums[i];
+        }
+
+        int low = 0;
+        int high = sum;
+        while(low <= high) {
+            int mid = (low+high)/2;
+            if(numOfSubArraysRequired(nums, mid, k) <= k) {
+                high = mid-1;
+            } else {
+                low =  mid+1;
+            }
+        }
+        return low;
+    }
+
+    private static int numOfSubArraysRequired(int[] nums, int maxSum, int maxSubArray) {
+        int sum = 0;
+        int numOfSubArray = 1;
+        for(int i=0; i < nums.length; i++) {
+            if(sum > maxSum) {
+                return maxSubArray + 1;
+            }
+            if(sum+nums[i] > maxSum) {
+                numOfSubArray++;
+                sum=nums[i];
+            } else {
+                sum+=nums[i];
+            }
+        }
+        return numOfSubArray;
+    }
+
 }

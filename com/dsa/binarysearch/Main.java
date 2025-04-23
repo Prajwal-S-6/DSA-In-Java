@@ -45,7 +45,10 @@ public class Main {
 
         // System.out.println(floorSqrt(28));
 
-        System.out.println(NthRoot(3, 64));
+//        System.out.println(NthRoot(3, 64));
+
+        int[] arr = {2,3,1,2,4,3};
+        splitArray(arr, 5);
 
     }
 }
