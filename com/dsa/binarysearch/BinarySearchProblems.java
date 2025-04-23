@@ -365,7 +365,7 @@ public class BinarySearchProblems {
     }
 
 
-    //
+    // 1482. Minimum Number of Days to Make m Bouquets
     public static int minDays(int[] bloomDay, int m, int k) {
         int max = bloomDay[0];
         for(int i=1; i< bloomDay.length; i++) {
