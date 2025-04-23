@@ -47,8 +47,11 @@ public class Main {
 
 //        System.out.println(NthRoot(3, 64));
 
-        int[] arr = {2,3,1,2,4,3};
-        splitArray(arr, 5);
+//        int[] arr = {2,3,1,2,4,3};
+//        splitArray(arr, 5);
+
+        System.out.println(findMedianSortedArrays(new int[]{1,3}, new int[]{2})   );
+
 
     }
 }
