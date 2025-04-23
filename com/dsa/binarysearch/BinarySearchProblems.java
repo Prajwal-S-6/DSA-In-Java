@@ -1,5 +1,9 @@
 package com.dsa.binarysearch;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
 import static com.dsa.arrays.ArrayProblems.reverse;
 
 public class BinarySearchProblems {
@@ -298,4 +302,103 @@ public class BinarySearchProblems {
 
         return -1;
     }
+
+//---------------------------------------------------------------------------------------------------
+    public static int findKRotation(int[] nums) {
+        int numOfRotations = 0;
+        int low = 0;
+        int high =  nums.length -1;
+        int minValue = Integer.MAX_VALUE;
+        while(low <= high) {
+            int mid = (low+high)/2;
+            if(nums[low] < nums[mid]) {
+                if(nums[low] < minValue) {
+                    minValue = nums[low];
+                    numOfRotations = low;
+                }
+                low = mid+1;
+            } else {
+                if(nums[mid] < minValue) {
+                    minValue = nums[mid];
+                    numOfRotations = mid;
+                }
+                high = mid-1;
+            }
+        }
+        return numOfRotations;
+    }
+
+    //875. Koko Eating Bananas
+    public static int minEatingSpeed(int[] piles, int h) {
+        int low = 1;
+        int high = getMax(piles);
+
+        while(low <=high) {
+            int mid = (low+high)/2;
+            if(hoursToFinish(piles, mid, h) <= h) {
+                high = mid - 1;
+            } else {
+                low = mid + 1;
+            }
+        }
+
+        return low;
+    }
+
+    private static int hoursToFinish(int[] arr, int rate, int maxHours) {
+        int noOfHours = 0;
+        for(int i=0; i < arr.length; i++) {
+            if(noOfHours > maxHours) {
+                return maxHours+1;
+            }
+            noOfHours += (int) Math.ceil((double) arr[i]/(double) rate);
+        }
+        return noOfHours;
+    }
+
+    private static int getMax(int[] arr) {
+        int max = arr[0];
+        for(int i=1; i< arr.length; i++) {
+            max = Math.max(max, arr[i]);
+        }
+        return max;
+    }
+
+
+    //
+    public static int minDays(int[] bloomDay, int m, int k) {
+        int max = bloomDay[0];
+        for(int i=1; i< bloomDay.length; i++) {
+            max = Math.max(max, bloomDay[i]);
+        }
+        int low = 1;
+        int high = max;
+        while(low <=high) {
+            int mid = (low+high)/2;
+            if(numOfBoqCreated(bloomDay, mid, m, k) >= m) {
+                high = mid-1;
+            } else {
+                low = mid+1;
+            }
+        }
+        return low > max ? -1 : low;
+    }
+
+    private static int numOfBoqCreated(int nums[], int days, int m, int k) {
+        int noOfBoq = 0;
+        int consecutiveFlowers = 0;
+        for(int i=0; i < nums.length; i++) {
+            if(nums[i] <= days) {
+                consecutiveFlowers++;
+                if(consecutiveFlowers == k) {
+                    consecutiveFlowers = 0;
+                    noOfBoq++;
+                }
+            } else {
+                consecutiveFlowers = 0;
+            }
+        }
+        return noOfBoq;
+    }
+
 }
