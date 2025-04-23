@@ -587,7 +587,6 @@ public class BinarySearchProblems {
         int n2 = nums2.length;
         int n = n1+n2;
         int left = (n1+n2+1)/2;
-        int right = n-left;
         if(n1 > n2) return findMedianSortedArrays(nums2, nums1);
         int low = 0;
         int high = n1;
