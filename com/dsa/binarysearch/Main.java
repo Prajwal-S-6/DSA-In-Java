@@ -52,7 +52,9 @@ public class Main {
 
 //        System.out.println(findMedianSortedArrays(new int[]{1,3}, new int[]{2})   );
 
-        System.out.println(aggressiveCows(new int[] {4, 2, 1, 3, 6}, 2));
+//        System.out.println(aggressiveCows(new int[] {4, 2, 1, 3, 6}, 2));
+        System.out.println( allocateMinPages(new int[] {25, 46, 28, 49, 24}, 4));
+
 
 
     }

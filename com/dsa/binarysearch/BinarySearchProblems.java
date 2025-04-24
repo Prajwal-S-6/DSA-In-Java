@@ -616,6 +616,7 @@ public class BinarySearchProblems {
         return 0;
     }
 
+    //---------------------------------------------------------------------------------------------
     public static int aggressiveCows(int[] arr, int noOfCows) {
         Arrays.sort(arr);
         int max = 0;
@@ -654,6 +655,47 @@ public class BinarySearchProblems {
             }
         }
         return numOfCows;
+    }
+
+
+    //------------------------------------------------------------------------------------------
+    public static int allocateMinPages(int[] arr, int numOfStudents) {
+        int max = 0;
+        for(int i=0; i < arr.length; i++) {
+            max = Math.max(max, arr[i]);
+        }
+
+        int sum = 0;
+        for(int i=0; i < arr.length; i++) {
+            sum += arr[i];
+        }
+
+        int low = max;
+        int high = sum;
+
+        while(low <=high) {
+            int mid = (low+high)/2;
+            if(numOfStudentsNeeded(arr, mid) > numOfStudents) {
+                low = mid+1;
+            } else {
+                high = mid-1;
+            }
+        }
+        return low;
+    }
+
+    private static int numOfStudentsNeeded(int[] arr, int maxPages) {
+        int sum = 0;
+        int numOfStudents = 1;
+        for(int i=0; i < arr.length; i++) {
+            if(sum+arr[i] > maxPages) {
+                numOfStudents++;
+                sum = arr[i];
+            } else {
+                sum+=arr[i];
+            }
+        }
+        return numOfStudents;
     }
 
 }
