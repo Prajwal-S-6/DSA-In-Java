@@ -53,9 +53,15 @@ public class Main {
 //        System.out.println(findMedianSortedArrays(new int[]{1,3}, new int[]{2})   );
 
 //        System.out.println(aggressiveCows(new int[] {4, 2, 1, 3, 6}, 2));
-        System.out.println( allocateMinPages(new int[] {25, 46, 28, 49, 24}, 4));
+//        System.out.println( allocateMinPages(new int[] {25, 46, 28, 49, 24}, 4));
+
+//        System.out.println(maxDistanceBetweenGasStations(new int[] {1,2,3,4,5,6,7,8,9,10}, 1));
+
+        searchMatrix(new int[][] {{1},{3},{5}}, 1);
 
 
 
     }
 }
+
+  //or low+k because low = (high+1)

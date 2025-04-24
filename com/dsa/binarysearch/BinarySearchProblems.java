@@ -442,15 +442,16 @@ public class BinarySearchProblems {
         int low = 0;
         int high = arr.length - 1;
 
-        while(low <= high) {
+        while(low <=high) {
             int mid = (low+high)/2;
-            if(arr[mid] - (mid + 1) < k) {
-                low = mid + 1;
-            } else {
+            if(arr[mid] - (mid+1) > k) {
                 high = mid - 1;
+            } else {
+                low = mid + 1;
             }
         }
-        return high+k+1;   //or low+k because low = (high+1)
+        return low+k;
+
 
     }
 
@@ -696,6 +697,81 @@ public class BinarySearchProblems {
             }
         }
         return numOfStudents;
+    }
+
+    public static double maxDistanceBetweenGasStations(int[] arr, int newStations) {
+        int max = 0;
+        for(int i=0; i < arr.length - 1; i++) {
+            max = Math.max((arr[i+1] - arr[i]), max);
+        }
+        double low = 0;
+        double high = max;
+
+        while(low <=high) {
+            double mid = (low+high)/2;
+            if(numOfStationsPossible(arr, mid, newStations) == (newStations+arr.length)) {
+                return mid;
+            }
+            else if(numOfStationsPossible(arr, mid, newStations) > (newStations+arr.length)) {
+                low = mid + 1;
+            } else {
+                high = mid - 1;
+            }
+        }
+        return -1;
+    }
+
+    private static double numOfStationsPossible(int[] arr, double distance, int newStations) {
+        int max = 0;
+        for(int i=0; i < arr.length; i++) {
+            max = Math.max(max, arr[i]);
+        }
+        double sum = arr[0];
+        int numOfStations = 1;
+        double maxDistance = 0;
+        for(int i=1; i < arr.length; i++) {
+            if(numOfStations <= newStations) {
+                maxDistance = Math.max(sum, sum+distance);
+                sum+=distance;
+                numOfStations++;
+            }
+            else {
+                maxDistance = Math.max(arr[i+1], arr[i]);
+            }
+        }
+
+        return maxDistance;
+    }
+
+
+    // 74. Search a 2D Matrix
+    public static boolean searchMatrix(int[][] matrix, int target) {
+        int low1 = 0;
+        int high1 = matrix.length - 1;
+        int low2 = 0;
+        int high2 = matrix[0].length - 1;
+        while(low1<=high1 && low2 <=high2) {
+            int mid1 = (low1+high1)/2;
+            int mid2 = (low2+high2)/2;
+            if(matrix[mid1][mid2] == target) {
+                return true;
+            } else if(matrix[mid1][mid2] > target) {
+                if(mid1 != 0 && target <= matrix[mid1-1][matrix[0].length - 1]) {
+                    high1 = mid1 - 1;
+                } else {
+                    high2 = mid2 - 1;
+                }
+
+            } else {
+                if(mid1 < matrix.length - 1 && target >= matrix[mid1+1][0]) {
+                    low1 = mid1 + 1;
+                } else {
+                    low2 = mid2 + 1;
+                }
+
+            }
+        }
+        return false;
     }
 
 }
