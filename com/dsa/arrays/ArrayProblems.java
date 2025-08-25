@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
+import java.util.*;
 
 public class ArrayProblems {
 
@@ -125,10 +126,17 @@ public class ArrayProblems {
         return true;
     }
 
+    public static String longestCommonPrefix(String[] strs) {
         String prefix = "";
         String intialVal = strs[0];
         int i = 1;
         if(strs.length == 1) {
             return intialVal;
         }
+        while(i < strs.length) {
+            int j = 0;
+            if(prefix.length() > 0) {
+                intialVal = prefix;
+                prefix = "";
+            }
 }
