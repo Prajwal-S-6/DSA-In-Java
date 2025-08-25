@@ -812,4 +812,10 @@ public class BinarySearchProblems {
               this.right = right;
           }
       }
+
+    public static int countNodes(TreeNode root) {
+        return traverseNodes(root, 0);
+    }
+
+
 }
