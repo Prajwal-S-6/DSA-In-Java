@@ -143,4 +143,12 @@ public class ArrayProblems {
                 } else {
                     break;
                 }
+
+            }
+            i++;
+        }
+
+        return prefix;
+
+    }
 }
