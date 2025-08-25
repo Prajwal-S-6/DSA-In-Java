@@ -818,4 +818,14 @@ public class BinarySearchProblems {
     }
 
 
+    private static int traverseNodes(TreeNode root, int val) {
+        if(root == null) {
+            return val;
+        } else val++;
+        val = traverseNodes(root.left,  val);
+        val = traverseNodes(root.right, val);
+        return val;
+    }
+
+
 }
