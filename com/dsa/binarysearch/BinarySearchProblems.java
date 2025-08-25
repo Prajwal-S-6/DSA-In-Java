@@ -828,4 +828,25 @@ public class BinarySearchProblems {
     }
 
 
+
+    public static int firstBadVersion(int n) {
+        long low = 1;
+        long high = n;
+
+        while(low < high) {
+            long mid = (low+high)/2;
+            if(!isBadVersion((int) mid)) {
+                low = (int)mid+1;
+            } else {
+                high = (int) mid;
+            }
+        }
+        return (int) low;
+
+    }
+
+    private static boolean isBadVersion(int mid) {
+        return mid >= 1_70_27_66_719;
+    }
+
 }
