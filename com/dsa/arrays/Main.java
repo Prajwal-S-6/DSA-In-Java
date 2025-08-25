@@ -24,5 +24,11 @@ public class Main {
         System.out.println(check(arr3));
 
 
+        String[] s = {"flower","flower","flower","flower"};
+        longestCommonPrefix(s);
+
+        int[] height = {1,8,6,2,5,4,8,3,7};
+        maxArea(height);
+
     }
 }
