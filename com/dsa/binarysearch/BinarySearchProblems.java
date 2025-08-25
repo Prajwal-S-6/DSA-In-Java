@@ -774,4 +774,27 @@ public class BinarySearchProblems {
         return false;
     }
 
+    public static int mySqrt(int x) {
+        int low = 0;
+        int high = x;
+        int result = 1;
+        if(x == 0) {
+            return 0;
+        }
+        if(x == 1) {
+            return 1;
+        }
+        for(int i=1; i < x; i++){
+            int sqr = i*i;
+            if(sqr == x) {
+                return i;
+            }
+            if(sqr < x && sqr > 1) {
+                result = i;
+            } else  {
+                return result;
+            }
+        }
+        return result;
+    }
 }
