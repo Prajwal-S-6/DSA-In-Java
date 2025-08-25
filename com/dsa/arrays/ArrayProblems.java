@@ -125,4 +125,10 @@ public class ArrayProblems {
         return true;
     }
 
+        String prefix = "";
+        String intialVal = strs[0];
+        int i = 1;
+        if(strs.length == 1) {
+            return intialVal;
+        }
 }
