@@ -1,9 +1,6 @@
 package com.dsa.arrays;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
+import java.lang.reflect.Array;
 import java.util.*;
 
 public class ArrayProblems {
@@ -139,4 +136,11 @@ public class ArrayProblems {
                 intialVal = prefix;
                 prefix = "";
             }
+            while(j < intialVal.length() && j < strs[i].length()) {
+                if(intialVal.charAt(j) == strs[i].charAt(j)) {
+                    prefix+=strs[i].charAt(j);
+                    j++;
+                } else {
+                    break;
+                }
 }
