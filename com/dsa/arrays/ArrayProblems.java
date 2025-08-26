@@ -215,4 +215,7 @@ public class ArrayProblems {
             map.put((target - nums[i]), i);
 
         }
+        return result;
+
+    }
 }
