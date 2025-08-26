@@ -33,5 +33,8 @@ public class Main {
         int[] threeSum = {-1,0,1,2,-1,-4};
         threeSum(threeSum);
 
+
+        int[] twoSum = { 2,7,11,15};
+        twoSum(twoSum, 9);
     }
 }
