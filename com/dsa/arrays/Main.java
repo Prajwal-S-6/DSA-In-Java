@@ -30,5 +30,8 @@ public class Main {
         int[] height = {1,8,6,2,5,4,8,3,7};
         maxArea(height);
 
+        int[] threeSum = {-1,0,1,2,-1,-4};
+        threeSum(threeSum);
+
     }
 }
