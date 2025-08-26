@@ -200,4 +200,7 @@ public class ArrayProblems {
 
             }
         }
+        return new ArrayList<>(result);
+    }
+
 }
