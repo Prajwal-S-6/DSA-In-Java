@@ -207,4 +207,8 @@ public class ArrayProblems {
         int[] result = new int[2];
         Map<Integer, Integer> map = new HashMap<>();
         for(int i=0; i < nums.length; i++) {
+            if(map.get(nums[i]) != null) {
+                result[0] =i;
+                result[1] = map.get(nums[i]);
+                return result;
 }
