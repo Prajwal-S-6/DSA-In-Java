@@ -176,4 +176,9 @@ public class ArrayProblems {
         //             if(nums[i]+nums[j]+nums[k] == 0) {
         //                 List<Integer> triplet = new ArrayList<>(3);
         //                 triplet.add(nums[i]);
+        //                 triplet.add(nums[j]);
+        //                 triplet.add(nums[k]);
+        //                 List<Integer> sortedTriplet = triplet.stream().sorted().toList();
+        //                 if(!result.contains(sortedTriplet)) {
+        //                     result.add(sortedTriplet);
 }
