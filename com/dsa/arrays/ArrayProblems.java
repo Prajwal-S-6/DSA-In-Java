@@ -187,4 +187,8 @@ public class ArrayProblems {
         //         }
         //     }
         // }
+
+        for(int i=0; i < nums.length; i++) {
+            int target = 0-nums[i];
+            Map<Integer, Integer> map = new HashMap<>();
 }
