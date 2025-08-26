@@ -181,4 +181,10 @@ public class ArrayProblems {
         //                 List<Integer> sortedTriplet = triplet.stream().sorted().toList();
         //                 if(!result.contains(sortedTriplet)) {
         //                     result.add(sortedTriplet);
+        //                 }
+
+        //             }
+        //         }
+        //     }
+        // }
 }
