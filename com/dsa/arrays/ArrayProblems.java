@@ -247,5 +247,11 @@ public class ArrayProblems {
                             nums[(int) map.get(Long.valueOf(nums[j]))]));
                 }
                 map.put(target2 - Long.valueOf(nums[j]), j);
+            }
+        }
+    }
+
+    public static int[] plusOne(int[] digits) {
+        int last = digits.length - 1;
     }
 }
