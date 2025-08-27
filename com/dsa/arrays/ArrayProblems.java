@@ -241,5 +241,11 @@ public class ArrayProblems {
             long target2 = target - Long.valueOf(nums[i]);
             for(int j=i+1; j < nums.length; j++) {
                 if(map.get(Long.valueOf(nums[j])) != null) {
+                    result.add(Arrays.asList(nums[x-1],
+                            nums[j],
+                            nums[i],
+                            nums[(int) map.get(Long.valueOf(nums[j]))]));
+                }
+                map.put(target2 - Long.valueOf(nums[j]), j);
     }
 }
