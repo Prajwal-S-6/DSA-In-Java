@@ -269,5 +269,10 @@ public class ArrayProblems {
         }
         if(isLastDigitNine) {
             l.push(1);
+        }
+
+
+        int[] arr = new int[l.size()];
+        for(int i=0; i< l.size(); i++) {
     }
 }
