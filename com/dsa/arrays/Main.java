@@ -36,5 +36,8 @@ public class Main {
 
         int[] twoSum = { 2,7,11,15};
         twoSum(twoSum, 9);
+
+        int[] fourSum = {1, 0, -1, 0, -2, 2};
+        fourSum(fourSum, 0);
     }
 }
