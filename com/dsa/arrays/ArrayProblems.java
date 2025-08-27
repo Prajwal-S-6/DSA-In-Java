@@ -261,5 +261,13 @@ public class ArrayProblems {
                 isLastDigitNine = true;
                 last--;
             }
+            else {
+                digits[last] = digits[last]+1;
+                last--;
+                break;
+            }
+        }
+        if(isLastDigitNine) {
+            l.push(1);
     }
 }
