@@ -218,4 +218,14 @@ public class ArrayProblems {
         return result;
 
     }
+
+    public static List<List<Integer>> fourSum(int[] nums, int target) {
+        Set<List<Integer>> result = new HashSet<>();
+
+        if(nums.length == 4) {
+            if(target != Long.valueOf(nums[0])+ Long.valueOf(nums[1])+Long.valueOf(nums[2])+Long.valueOf(nums[3])) {
+                return new ArrayList(result);
+            }
+        }
+    }
 }
