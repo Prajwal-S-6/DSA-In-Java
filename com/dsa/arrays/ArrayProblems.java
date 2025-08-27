@@ -235,5 +235,11 @@ public class ArrayProblems {
         return new ArrayList(result);
     }
 
+    private static void threeSumForFourSum(int x, long target, int[] nums, Set<List<Integer>> result) {
+        for(int i=x; i<nums.length; i++) {
+            Map<Long, Integer> map = new HashMap<>();
+            long target2 = target - Long.valueOf(nums[i]);
+            for(int j=i+1; j < nums.length; j++) {
+                if(map.get(Long.valueOf(nums[j])) != null) {
     }
 }
