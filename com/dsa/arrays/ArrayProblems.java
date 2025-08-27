@@ -253,5 +253,13 @@ public class ArrayProblems {
 
     public static int[] plusOne(int[] digits) {
         int last = digits.length - 1;
+        LinkedList<Integer> l = new LinkedList<>();
+        boolean isLastDigitNine = false;
+        while(last >= 0) {
+            if(digits[last] == 9) {
+                digits[last] = 0;
+                isLastDigitNine = true;
+                last--;
+            }
     }
 }
