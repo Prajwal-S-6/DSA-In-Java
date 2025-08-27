@@ -227,5 +227,13 @@ public class ArrayProblems {
                 return new ArrayList(result);
             }
         }
+        Arrays.sort(nums);
+        for(int i=0; i<nums.length; i++) {
+            long target3 = target- Long.valueOf(nums[i]);
+            threeSumForFourSum(i+1, target3, nums, result);
+        }
+        return new ArrayList(result);
+    }
+
     }
 }
