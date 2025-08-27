@@ -274,5 +274,53 @@ public class ArrayProblems {
 
         int[] arr = new int[l.size()];
         for(int i=0; i< l.size(); i++) {
+            arr[i] = l.get(i);
+        }
+        return arr;
+    }
+
+    public static boolean isValidSudoku(char[][] board) {
+        int i=0;
+        int n = 9;
+        while(i<n) {
+            List<Character> l1 = new ArrayList<>();
+            List<Character> l2 = new ArrayList<>();
+            for(int x=0; x < n; x++){
+                if(board[x][i] != '.' && l1.contains(board[x][i])) {
+                    return false;
+                } else {
+                    l1.add(board[x][i]);
+                }
+            }
+            for(int y=0; y < n; y++) {
+                if(board[i][y] != '.' && l2.contains(board[i][y])) {
+                    return false;
+                } else {
+                    l2.add(board[i][y]);
+                }
+            }
+            i++;
+        }
+        for(int a=0; a<9; a+=3) {
+            for(int b=0; b< 9; b+=3) {
+                if(!isValid3x3Matrix(a,b,board)) return false;
+            }
+        }
+        return true;
+    }
+
+    public static boolean isValid3x3Matrix(int i, int j, char[][] matrix) {
+        List<Character> l1 = new ArrayList<>();
+
+        for(int x = i; x < i+3; x++) {
+            for(int y = j ; y < j+3; y++) {
+                if(matrix[x][y] != '.' && l1.contains(matrix[x][y])) {
+                    return false;
+                } else {
+                    l1.add(matrix[x][y]);
+                }
+            }
+        }
+        return true;
     }
 }
