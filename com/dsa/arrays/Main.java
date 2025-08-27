@@ -39,5 +39,9 @@ public class Main {
 
         int[] fourSum = {1, 0, -1, 0, -2, 2};
         fourSum(fourSum, 0);
+
+        int[] sum = {1,2,3};
+        plusOne(sum);
+
     }
 }
