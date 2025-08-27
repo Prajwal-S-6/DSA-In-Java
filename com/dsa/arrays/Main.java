@@ -54,5 +54,7 @@ public class Main {
                         {'.','.','.','.','7','.','6','.','.'}
         };
 
+        System.out.println(isValidSudoku(x));
+
     }
 }
