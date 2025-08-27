@@ -1,6 +1,5 @@
 package com.dsa.arrays;
 
-import java.lang.reflect.Array;
 import java.util.*;
 
 public class ArrayProblems {
